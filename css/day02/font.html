@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bf {
+        font-size: 24px;
+      }
+
+      .sf {
+        font-size: 12px;
+      }
+
+      .highlight {
+        background-color: red;
+        color: white;
+      }
+
+      html {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- <div style="font-size: 24px; color: red"> -->
+      <!-- 상속 -->
+      <p style="font-size: 2rem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa officiis
+        ipsam voluptatibus laborum,<span class="bf"> voluptatem molestiae</span>
+        omnis itaque laboriosam, aliquid facilis asperiores<span
+          class="sf highlight"
+        >
+          tempora </span
+        >aspernatur voluptates, pariatur repellat dolorem corporis error
+        suscipit.
+      </p>
+      <!-- 
+      주의 사항
+      javascript -> 화면을 동적으로 만들기위해서
+
+      id 선택자로 css(color:red)를 부여했습니다
+      변경되는 css를 class(color:blue) 선택자로 주게되면
+      적용이 될까요? (x) -> inline으로 주어야한다
+
+      class 선택자로 css를 주었다면 새로운 class를 추가
+       -->
+    </div>
+
+    <p style="font-size: 2rem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+      incidunt maxime ad autem a, labore amet nihil dolorem delectus sed
+      temporibus est libero unde magni impedit reiciendis numquam voluptate
+      adipisci.
+    </p>
+  </body>
+</html>

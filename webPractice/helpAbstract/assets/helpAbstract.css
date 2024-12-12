@@ -1,0 +1,274 @@
+:root {
+  --color-black: #000000;
+  --color-blue: #4c5fd5;
+  --color-purple: #dadbf1;
+  --color-white: #fff;
+}
+header {
+  background-color: var(--color-black);
+  width: 1440px;
+  height: 88px;
+  padding: 0px 30px 0px;
+  display: flex;
+  color: var(--color-white);
+}
+
+.logo-img {
+  width: 32px;
+  height: 32px;
+}
+
+.logo {
+  display: flex;
+  font: 24px;
+  gap: 13px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.topbar {
+  margin: 19px 69px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topbar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+  gap: 13px;
+}
+
+.help-center {
+  border-left: 1px solid var(--color-white);
+  height: 30px;
+  padding: 0 0 0 13px;
+}
+
+.topbar-right {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 7px;
+}
+.button-submit {
+  background-color: #191a1b;
+  color: var(--color-white);
+  width: 230px;
+  height: 50px;
+  margin: 0 0 0 16px;
+  padding: 6px 22px;
+  border: 1px solid var(--color-white);
+}
+
+.button-signin {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  width: 140px;
+  height: 50px;
+  margin: 0 0 0 16px;
+  padding: 6px 32px;
+  border: transparent;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.helpbox {
+  width: 1440px;
+  height: 397px;
+  background-color: var(--color-purple);
+  padding: 80px 30px 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.helpbox-helptext {
+  padding: 0 330px;
+  font-size: 80px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 16px;
+}
+
+.search-container {
+  position: relative;
+  width: 720px;
+}
+.helpbox-search {
+  box-sizing: border-box;
+  width: 100%;
+  height: 66px;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 16px;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 100%;
+  width: 100%;
+  padding-top: 180px;
+}
+.category {
+  display: grid;
+  grid-template:
+    "section1 section2"
+    "section3 section4"
+    "section5 section6";
+  width: 1134px;
+  height: 854px;
+}
+
+.category-list-img {
+  width: 86.81px;
+  height: 86.81px;
+}
+
+.category-link {
+  color: var(--color-blue);
+  font-size: 24px;
+}
+
+.category-list-versions {
+  grid-area: section1;
+  margin: 0 0 48px;
+}
+
+.category-list-account {
+  grid-area: section2;
+  margin: 0 0 48px;
+}
+
+.category-list-organizations {
+  grid-area: section3;
+  margin: 0 0 48px;
+}
+
+.category-list-billing {
+  grid-area: section4;
+  margin: 0 0 48px;
+}
+
+.category-list-authenticate {
+  grid-area: section5;
+  margin: 0 0 48px;
+}
+
+.category-list-comment {
+  grid-area: section6;
+  margin: 0 0 48px;
+}
+.category-list-versions,
+.category-list-account,
+.category-list-organizations,
+.category-list-billing,
+.category-list-authenticate,
+.category-list-comment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 30px 0 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  line-height: 30px;
+}
+
+.category-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+footer {
+  width: 1440px;
+  height: 402px;
+  padding: 0 30px 60px;
+  background-color: var(--color-black);
+  display: flex;
+  font-size: 16px;
+  position: relative;
+}
+
+.footer-container {
+  padding: 0 0 100px;
+  margin: 0 69px;
+  color: var(--color-white);
+  display: flex;
+  gap: 30px;
+}
+
+.about-name {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 48px 0 16px;
+}
+
+.about-text {
+  line-height: 1.4;
+}
+
+.about-abstract,
+.about-resources,
+.about-comunity,
+.about-company {
+  width: 186.3px;
+  height: 242px;
+  box-sizing: border-box;
+}
+
+.about-contact {
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.contact-email {
+  font-weight: 400;
+}
+
+.copyright {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--color-white);
+  position: absolute;
+  right: 100px;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}

@@ -1,0 +1,10 @@
+/* 외부 스타일링 */
+/* <link> 다른 html 파일과 연결, css 파일 하나로 여러 html에 연결이 가능 */
+
+div {
+    color: red;
+}
+
+p {
+    color:green; 
+}

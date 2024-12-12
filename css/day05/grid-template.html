@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid {
+        display: grid;
+        grid-template:
+          "header header" 200px
+          "side section-1" 200px
+          "side section-2" 200px
+          "footer footer" 200px
+          /200px 400px
+          ;
+      }
+      /* flex로 구현할 수 있는건 모두 flex로 구현
+      반응형 (모바일, 태블릿, 데스크탑) 구현 시 레이아웃 변화가 큰 경우 - 그리드
+      상품, 비디오 목록과 같이 한 배열에 몇개 씩 보여주는 경우
+      데이터 테이블 */
+
+      .a {
+        grid-area: header;
+      }
+
+      .b {
+        grid-area: side;
+      }
+
+      .c{
+        grid-area: section-1;
+      }
+
+      .d {
+        grid-area: section-2;
+      }
+
+      .e {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid-item a" style="background-color: red">a</div>
+      <div class="grid-item b" style="background-color: orange">b</div>
+      <div class="grid-item c" style="background-color: yellow">c</div>
+      <div class="grid-item d" style="background-color: green">d</div>
+      <div class="grid-item e" style="background-color: blue">e</div>
+    </div>
+  </body>
+</html>

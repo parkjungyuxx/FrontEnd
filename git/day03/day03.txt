@@ -1,0 +1,46 @@
+1. 게시판 만들기라는 프로젝트를 할거야
+2. 폴더 생성, 폴더로 이동해서 git init
+3. 원격 저장소 생성 (github)
+4. 작업 진행 -> 변경사항 (로컬)
+5. 변경사항을 로컬 저장소에 저장 (add -> commit)
+6. 로컬 저장소에 저장된 내역을 원격 저장소에 저장 (push)
+7. 단, 원격 저장소를 혼자 쓰는 경우가 아닐 때는 작업 내용이 로컬 저장소와 
+다를 수 있다 (다른 사람이 코드를 저장) -> 동기화 시켜줄 필요가 있다 (pull)
+8. 원격 저장소의 히스토리와 로컬 저장소의 히스토리가 다를 경우 충돌 (rebase, merge)
+
+---------
+
+1. main (실제 서비스가 되는 브랜치)
+2. dev (누구든 상관 없음) --- 폴더 구조 생성(init)
+3. git pull origin dev
+4. 각자 브랜치 생성
+5. style/login
+   style/signUp
+
+6. 테스크 이행
+<div>레이아웃</div>
+
+7. 각자 브랜치로 push 
+
+8. PR 생성 -> 리뷰하는 시간
+9. 깜짝 미션 -> 수정해오세요 -> 수정해서 다시 요청
+
+10. style merge -> button
+
+11. 각자 브랜치 생성
+feat/login
+feat/signUp
+fixed/login ---> reviewer (준규, 경주님)
+fixed/signIp ---> reviewer (준규, 경주님)
+
+12. fixed merge
+
+13. feat merge --> conflict
+------
+나: 로그인 페이지 레이아웃 / 기능 개발
+- pages / login.html -> <div>레이아웃</div> (style/login)
+- pages / login.html -> <div>레이아웃</div> ---> <div>레이아웃+기능</div> (feat/login)
+
+경주님: 회원가입 페이지 레이아웃 / 기능 개발
+- pages / signUp.html -> <div>레이아웃</div> (style/signUp)
+- pages / signUp.html -> <div>레이아웃+기능</div> ---> <div>레이아웃+기능</div> (feat/signUp)

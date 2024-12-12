@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        padding: 16px;
+        border: 1px solid red;
+      }
+
+      div {
+        padding: 8px;
+        border: 1px solid black;
+      }
+
+      p {
+        padding: 4px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      section
+      <div>
+        div
+        <p>p</p>
+      </div>
+    </section>
+  </body>
+  <script>
+    const section = document.querySelector("section");
+    const div = document.querySelector("div");
+    const p = document.querySelector("p");
+
+    // 함수의 매개변수에는 무엇이든 올 수 있기 때문에
+    // e가 any 타입 -> 자동완성 x -> 타입 안정적이지 않다
+    // 함수화 -> 재사용 -> 관리할 포인트가 줄었다는 이야기
+
+    function alertEventTagName(e) {
+      //   e.stopPropagation(); //전파 방지
+      // target -> 누른 대상
+      // currentTarget -> 이벤트가 발생한 대상
+      alert(e.currentTarget.tagName);
+    }
+
+    // section.addEventListener("click", alertEventTagName, true);
+    // div.addEventListener("click", alertEventTagName);
+    // p.addEventListener("click", alertEventTagName, true);
+
+    // 자식 요소만 이벤트 발생시키고 싶어 -> 이벤트 전파 방지
+    // 자식 요소 이벤트 실행 후에 부모 요소도 실행하고 싶어 -> 아무행동 x (버블링)
+    // 부모 요소 이벤트 실행 후에 대상 요소 이벤트 실행하고 싶어 -> 캡처링, true
+  </script>
+</html>

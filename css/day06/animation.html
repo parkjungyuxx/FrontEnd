@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+     애니메이션 (동영상처럼 계속 움직이는)
+     
+     
+     -->
+    <style>
+      section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        font-size: 48px;
+        font-weight: 900;
+        animation: arrowRight 10s infinite alternate;
+      }
+
+      @keyframes arrowRight {
+        to {
+          transform: translateX(10px);
+          /* name duration, (한번의 반복이 시간 안에 진행될 것이냐), interation-count, direction 방향 */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <p>></p>
+    </section>
+  </body>
+</html>

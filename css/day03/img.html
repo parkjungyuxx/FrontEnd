@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 1200px;
+        /* height: 500px; 대부분의 요소는 width, height으로 크기 조절 가능*/
+        /* 그러나 a와 span과 같이 inline(컨텐츠만큼 크기를 차지하는 요소) 크기 조절 불가능 */
+        aspect-ratio: 3 / 4; /* 종회비, height 계산하지 않고 편하게 */
+        object-fit: contain; /* 여백으로 종횡비*/
+        object-fit: cover; /* 자르면서 종회비 */
+
+        /* 가장 좋은 방법은 억지로 맞추는 것이 아니라 필요에 해상도의 이미지를 준비하는 것 */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./assets/images/tottenham.jpg" alt="" />
+  </body>
+</html>
+
+<!--
+
+웹앱 -> javascript
+모바일 앱 -> 코틀린(AOS - java) / 스위프트(IOS - object-c) -> React Native (javascrip)
+                                   -> Flutter (dart)
+
+
+모바일 앱을 만들 때 언어가 다른이유? -> 핸드폰 기기에 접근해야하기 때문에
+핸드폰 기능을 쓰지 않아도 되는 경우 -> 웹으로 만들어진 것을 모바일 앱으로 만들어서 보여줘요
+
+자바스크립트 - 풀스택
+-->
+
+

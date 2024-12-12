@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 10px;
+      }
+
+      .scale:hover {
+        transform: scale(1.5); /* 사용자가 요소를 선택했다는 것을 보여줄 때 */
+        cursor: pointer;
+
+        /* transition: 지연시키다 */
+        transition: transform 5s ease-in-out;
+        /* easing function */
+        /*
+        ease : 시작과 종료를 부드럽게
+        linear : 일정하게
+        ease-in : 천천히 시작
+        ease-out : 천천히 종료
+        ease-in-out : 천천히 시작해서 천천히 종료
+        */
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .rotate:hover {
+        transform: rotateX(180deg); /* 회전 + 요소 크기 방향 전환 */
+        transform: rotateY(180deg); /* flip 효과, 카드 뒤집어지는 효과 */
+        transition: all 2s;
+      }
+
+      .translate:hover {
+        transform: translateX(50%); /* 모달, 배너 */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="center">
+      <div class="scale"></div>
+      <!-- scale 크기 -->
+      <div class="rotate">rotate</div>
+      <!--reotate 회전 -->
+      <div class="translate"></div>
+      <!-- translate 이동, 이웃하는 다른 요소와 상관 없이 이동이 가능 -->
+    </section>
+  </body>
+</html>

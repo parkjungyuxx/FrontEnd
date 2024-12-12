@@ -1,0 +1,296 @@
+:root {
+  --background-base: #121212;
+  --background-highlight: #1f1f1f;
+  --text-base: #fff;
+  --text-subdued: #b3b3b3;
+  --decorative-base: #fff;
+  --decorative-subdued: #292929;
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body {
+  padding: 8px;
+  background-color: black;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: black;
+}
+
+.top-menu-spotify-logo-icon {
+  font-size: 33px;
+  margin-top: -2px;
+  margin-left: 7px;
+  color: white;
+}
+
+i {
+  color: #656565;
+  font-size: 22px;
+}
+
+.top-menu-middle-button-home-img {
+  color: white;
+  width: 28px;
+  margin: 0 1px;
+}
+
+.top-menu-middle-button-home {
+  padding: 8px;
+  margin: 0 0 0 8px;
+  background-color: #1f1f1f;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.top-menu-input-search {
+  min-width: 490px;
+  padding: 14px 64px 14px 48px;
+  box-sizing: border-box;
+  background-color: #1f1f1f;
+  border-radius: 500px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1rem;
+  border: transparent;
+}
+
+.top-menu-input-search-button-explore {
+  border-left: 1px solid #656565;
+  padding-left: 10px;
+}
+
+.top-menu-user-actions-button-signin {
+  color: #b3b3b3;
+  padding: 8px 32px 8px 8px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.top-menu-user-actions-button-signin:hover {
+  color: #ffffff;
+  scale: 1.04;
+}
+
+.white-button-big {
+  font-size: 16px;
+  padding: 14px 32px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+  border: transparent;
+  border-radius: 500px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+.white-button-big:hover {
+  scale: 1.04;
+}
+
+.white-button-small {
+  font-size: 14px;
+  padding: 4px 16px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.white-button-small:hover {
+  scale: 1.04;
+}
+
+.snb {
+  background-color: var(--background-base);
+  border-radius: 8px;
+  height: calc(100vh - 48px - 94px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 8px 8px 8px 0;
+  box-sizing: border-box;
+  width: 331px;
+  min-width: 331px;
+}
+
+.snb-top-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 331px;
+  padding: 12px 16px 8px;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+}
+
+.snb-top-mylibrary-button {
+  color: #b3b3b3;
+  font-size: 16px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.snb-top-mylibrary-button:hover {
+  color: #ffffff;
+  transition: color 0.3s ease-in;
+}
+
+.background-color-lightgray {
+  background-color: #1f1f1f;
+}
+
+.snb-top-mylibrary-button-icon {
+  color: #b3b3b3;
+}
+
+.snb-contents-container {
+  padding: 0 8px 8px;
+}
+
+.snb-playlist-container {
+  margin: 8px 0 24px 0;
+  padding: 16px 20px;
+  line-height: 1.8;
+  border-radius: 8px;
+  min-width: 315px;
+  width: 100%;
+}
+
+.snb-podcast-container {
+  margin: 8px 0px;
+  padding: 16px 20px;
+  line-height: 1.6;
+  border-radius: 8px;
+  min-width: 315px;
+  width: 100%;
+}
+
+.snb-bottom {
+  bottom: 0;
+  margin: 0 0 32px;
+  padding: 0 24px;
+  width: 100%;
+  max-width: 331px;
+}
+
+a {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-size: 11px;
+  margin-right: 12px;
+}
+
+.snb-bottom-link-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 331;
+  gap: 8px;
+}
+
+.snb-bottom-link-list-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 283px;
+  line-height: 30px;
+}
+
+.snb-bottom-button-language {
+  border: 1px solid #b3b3b3;
+  border-radius: 9999px;
+  color: #ffffff;
+  padding: 6px 15px 6px;
+  font-size: 14px;
+  margin: 0 0 32px;
+}
+
+.snb-bottom-button-language:hover {
+  scale: 1.04;
+  border: 1px solid #ffffff;
+}
+
+.icon-globe {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.main-contents-container {
+  background-color: var(--background-base);
+  height: calc(100vh - 48px - 94px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 5405px;
+}
+
+.artist-name {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.artist-text {
+  font-size: 13px;
+  color: #b3b3b3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 두 줄까지만 표시하는 법 */
+  -webkit-box-orient: vertical; /* 강사님께 질문 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-img {
+  width: 154px;
+  height: 154px;
+  border-radius: 8px;
+}
+
+.main-contents-popular-artist-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.main-contents-popular-artist-card {
+  text-align: start;
+  line-height: 24px;
+}
+
+.main-contents-list-main-text {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.main-contents-list-sub-text {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.artist-img {
+  width: 154px;
+  height: 154px;
+  border-radius: 100%;
+}
+
+.ad-banner-container {
+  width: 100%;
+  height: 66px;
+  background: linear-gradient(to right, rgb(189, 70, 182), #4cb3ff);
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 24px 7px 15px;
+  margin-bottom: 8px;
+}

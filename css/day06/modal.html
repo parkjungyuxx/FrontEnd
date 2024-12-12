@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 200vh;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .modal-dim {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+      }
+
+      .modal {
+        padding: 64px;
+        background-color: white;
+        border: 1px solid #000;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* html은 무조건 오른쪽 방향으로 이동 아래 방향으로 이동
+        왼쪽, 위로 이동시키려면 음수 */
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal-dim"></div>
+    <div class="modal">modal</div>
+    test
+  </body>
+</html>

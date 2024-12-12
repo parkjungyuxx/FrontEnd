@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+            /* 
+            1. 세로로 배열 된 요소를 가로로 배치하고 싶을 때 
+            2. 내용물(자식요소, 텍스트 이미지)을 위/가운데/아래(세로든 가로든) 정렬하고 싶을 때
+            3. 내용물의 간격을 일정한 단위로 멀어지게 하고 싶을 때 
+            */
+            width: 800px;
+            height: 400px;
+            border: 1px solid #00f;
+
+            /* 가로 정렬 */
+            /* display: flex; <--가 부모요소에 있어야만 정렬 가능 */
+            /* 시작 가운데 끝 */
+            /* 간격 */
+            /* justify-content: space-around; */
+
+            /* 세로 정렬 */
+            /* 시작 가운데 끝 */
+            align-items: center;
+            /* flex-wrap: wrap; */
+            
+            /* 부모 요소 크기를 넘어간 경우 즐이는 것이 아니라 줄바꿈 하겠다 */
+
+
+            /* 원래 flex의 자식요소가 부모 크기를 넘어가면 사이즈를 줄입니다
+            나는 줄이고 싶지 않고 다음 줄로 보내고 싶어 -> flex-wrap : 'wrap'
+
+            나는 사이즈가 줄어들지 않았으면 좋겠다 -> 부모 요소를 넘어가고 싶어
+            자식 요소에 flex-shrink: 0; */
+        }
+        .flex-item{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            /* 세로 요소를 가로로 정렬할 때 뿐 아니라, 내용물의 가로,세로 정렬을 위해서도 사용된다 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .flex-self{
+            align-self: end;
+            /* flex-item은 자식 요소 전체에 center 옵션을 주었지만 flex-self는 혼자 end */
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+       <div class="flex-item">1</div>
+       <div class="flex-item">2</div>
+       <div class="flex-item flex-self">3</div>
+       <!-- 
+       현재 flex의 요소의 크기는 800px
+       자식 요소인 flex-item 요소의 크기의 합은 1000px
+       200px 넘어간다
+       
+       넘어간 200px 만큼 자식 요소의 크기를 줄인다 (flex-shrink)
+
+       stretch 속성 때문에 자식요소에 높이가 주어지지 않을 경우 부모 요소의 높이만큼 높아진다
+       -->
+       <div class="flex-item">4</div>
+       <div class="flex-item">5</div>
+    </div>
+</body>
+</html>

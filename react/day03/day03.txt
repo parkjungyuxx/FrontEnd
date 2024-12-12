@@ -1,0 +1,49 @@
+
+CSS in js (styled component, emotion) 
+tailwindcss - class 를 이용
+sass(scss) - css 상위 문법
+
+
+<style>
+</style>
+
+.css
+
+emotion -> react-native, react
+tailwindcss -> next
+sass(scss) -> 퍼블리셔, react
+css -> module.css (postCSS)
+
+
+--------------------------
+
+** hooks function
+
+useState
+useRef
+useEffect
+useMemo
+useCallback
+
+React.memo
+
+--------------------------
+
+useReducer
+useContext
+
+--------------------------
+
+redux (rtk)
+msw
+
+--------------------------
+
+jotai, zustand, recoil
+
+--------------------------
+
+react-query
+
+
+

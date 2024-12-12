@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .background {
+        background-color: lightgray;
+        height: 100vh; /* viewport height (사용자가 보고있는 화면의 100%) */
+        width: 100vw; /* block(한 줄을 다 채우는) 요소에는 width 100vw를 줄 이유가 없음*/
+        /* 새로 스크롤을 길이에 포함하지 않아서 가로 스크롤이 생겨서 잘 사용하지 않습니다. */
+        width: 100%; /* vw보다는 %를 사용하지만, 한 줄을 다 채우는 요소는 부여할 필요가 없다*/
+        /* div 요소는 한 줄을 다 차지하기 때문에 width가 줄어도 다음 요소는 다음 줄에 생선된다  */
+        background-image: url(./assets/images/IMG_4303.JPG);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* 배경화면 이미지가 100vh로 바뀌면서 스크롤에 따라 함께 내려옴 */
+        /* background 관련 속성을 한번에 입력 가능한 축약형도 있다. */
+        background: url(./assets/images/tottenham.jpg) fixed no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">안녕하세요</div>
+    <div>반갑습니다</div>
+  </body>
+</html>

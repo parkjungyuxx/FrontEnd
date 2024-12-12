@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="./assets/css/core/reset.css" />
+    <link rel="stylesheet" href="./assets/css/core/common.css" />
+    <link rel="stylesheet" href="./assets/css/core/layout.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/460111d067.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="main-inner flex-center position-relative">
+      <div class="top-menu-spotify-logo position-absolute left-8">
+        <i class="top-menu-spotify-logo-icon fa-brands fa-spotify"></i>
+      </div>
+      <container class="top-menu-middle-container flex-center gap-12">
+        <button class="top-menu-middle-button-home">
+          <img
+            class="top-menu-middle-button-home-img"
+            src="./assets/img/home (2).png"
+            alt=""
+          />
+        </button>
+        <form class="top-menu-input-container flex-center position-relative">
+          <input
+            class="top-menu-input-search"
+            type="text"
+            placeholder="어떤 콘텐츠를 감상하고 싶으세요?"
+          />
+          <button class="position-absolute left-8">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button
+            class="top-menu-input-search-button-explore position-absolute right-8"
+          >
+            <i class="fa-solid fa-briefcase"></i>
+          </button>
+        </form>
+      </container> 
+      <div class="top-menu-user-actions position-absolute flex-center right-0">
+        <button class="top-menu-user-actions-button-signin">가입하기</button>
+        <button class="top-menu-user-actions-button-login white-button-big">
+          로그인하기
+        </button>
+      </div>
+    </header>
+    <div class="main-inner flex-center border-box">
+      <aside class="snb position-relative flex-center">
+        <div class="snb-top-container flex-between">
+          <button class="snb-top-mylibrary-button flex-center">
+            <p class="snb-top-mylibrary-text">
+              <i
+                class="snb-top-mylibrary-button-icon fa-solid fa-book-open"
+              ></i>
+              내 라이브라리
+            </p>
+          </button>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="snb-contents-container main-inner">
+          <div class="snb-playlist-container background-color-lightgray">
+            <p class="main-text">첫 번째 플레이리스트를 만드세요.</p>
+            <p class="sub-text">어렵지 않아요 저희가 도와드릴게요.</p>
+            <button class="white-button-small margin-top-20">
+              플레이리스트 만들기
+            </button>
+          </div>
+          <div class="snb-podcast-container background-color-lightgray">
+            <p class="main-text">팔로우할 팟캐스트를 찾아보세요.</p>
+            <p class="sub-text">새로운 에피소드에 대한 소식을 알려드릴게요.</p>
+            <button class="white-button-small margin-top-20">
+              팟캐스트 둘러보기
+            </button>
+          </div>
+        </div>
+        <div class="snb-bottom position-absolute">
+          <div class="snb-bottom-link-list">
+            <container class="snb-bottom-link-list-container flex-center">
+              <a href="">법률 정보</a>
+              <a href="">안전 및 개인정보 보호 센터</a>
+              <a href="">개인정보 처리방침</a>
+              <a href="">접근성</a>
+            </container>
+            <a class="margin-bottom-20" href="">쿠키</a>
+          </div>
+          <button class="snb-bottom-button-language">
+            <i class="fa-solid fa-globe icon-globe"></i>한국어
+          </button>
+        </div>
+      </aside>
+      <div class="main-contents-container">
+        <div class="flex-between margin-top-10">
+          <div class="main-contents-list-main-text">인기 아티스트</div>
+          <div class="main-contents-list-sub-text">모두 표시</div>
+        </div>
+        <div
+          class="main-contents-popular-artist-container margin-top-20 margin-bottom-20 gap-12"
+        >
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/newjeans.jfif" alt="" />
+            <a class="artist-name" href="">NewJeans</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/aespa.jfif" alt="" />
+            <a class="artist-name" href="">aespa</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/day6.jfif" alt="" />
+            <a class="artist-name" href="">DAY6</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/lesserafim.jfif" alt="" />
+            <a class="artist-name" href="">LE SSERAFIM</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/iu.jfif" alt="" />
+            <a class="artist-name" href="">아이유</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="artist-img" src="./assets/img/theweekend.jfif" alt="" />
+            <a class="artist-name" href="">The Weeknd</a>
+            <p class="artist-text">아티스트</p>
+          </button>
+        </div>
+        <div class="flex-between margin-top-40">
+          <div class="main-contents-list-main-text">인기 앨범</div>
+          <div class="main-contents-list-sub-text">모두 표시</div>
+        </div>
+        <div
+          class="main-contents-popular-artist-container margin-top-20 margin-bottom-20"
+        >
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/jung.jfif" alt="" />
+            <a class="artist-name" href="">GOLDEN</a>
+            <p class="artist-text">정국</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/jimin.jfif" alt="" />
+            <a class="artist-name" href="">MUSE</a>
+            <p class="artist-text">지민</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/hero.jfif" alt="" />
+            <a class="artist-name" href="">IM HERO</a>
+            <p class="artist-text">임영웅</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/plave.jfif" alt="" />
+            <a class="artist-name" href="">ASTERUM:134-1</a>
+            <p class="artist-text">PLAVE</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/who.jfif" alt="" />
+            <a class="artist-name" href="">Who(Remixes)</a>
+            <p class="artist-text">지민</p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/v.jfif" alt="" />
+            <a class="artist-name" href="">Layover</a>
+            <p class="artist-text">V</p>
+          </button>
+        </div>
+        <div class="flex-between margin-top-40">
+          <div class="main-contents-list-main-text">인기 라디오</div>
+          <div class="main-contents-list-sub-text">모두 표시</div>
+        </div>
+        <div
+          class="main-contents-popular-artist-container margin-top-20 margin-bottom-20"
+        >
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/radio-baek.jfif" alt="" />
+
+            <p class="artist-text">
+              Zion.T,잔나비,DEAN 외 다양한 아티스트와 함께
+            </p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img
+              class="album-img"
+              src="./assets/img/radio-newjeans.jfif"
+              alt=""
+            />
+
+            <p class="artist-text">
+              LE SSERAFIM,IVE,KISS OF LIFE 외 다양한 아티스트와 함께
+            </p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/blackskirt.jfif" alt="" />
+
+            <p class="artist-text">
+              혁오,wave to earth,너드커넥션 외 다양한 아티스트와 함께
+            </p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/leeellamarz.jfif" alt="" />
+
+            <p class="artist-text">
+              그루비룸,BE'O,TOIL 외 다양한 아티스트와 함께
+            </p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/radio-aespa.jfif" alt="" />
+
+            <p class="artist-text">
+              LE SSERAFIM,KISS OF LIFE,NewJeans 외 다양한 아티스트 와 함께
+            </p>
+          </button>
+          <button class="main-contents-popular-artist-card">
+            <img class="album-img" src="./assets/img/day6.jfif" alt="" />
+
+            <p class="artist-text">
+              DAY6(Even of Day),Young K,원필 외 다양한 아티스트와 함께
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <aside class="ad-banner-container">
+      <section>
+        <p class="main-contents-list-sub-text">Spotify 미리 듣기</p>
+        <p class="artist-name">
+          좋아하는 국내 음악과 세계 최고의 플레이리스트를 들어보세요.
+        </p>
+      </section>
+      <button class="white-button-big">Premium 가입하기</button>
+    </aside>
+  </body>
+</html>

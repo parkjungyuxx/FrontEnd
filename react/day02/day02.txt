@@ -1,0 +1,93 @@
+
+
+React
+
+1. npm (pnpm, yarn) -- 모노레포
+2. react-router-dom
+3. css in js
+
+---------------------------------
+
+npm 패키지 매니저 도구
+(프로젝트에서 설치해야하는 라이브러리들을 관리할 수 있는 도구)
+
+npm install = npm i
+npm uninstall 
+npm run
+
+npm install
+- 현재 경로의 package.json에 기록된 라이브러리를 설치 -> node_modules 생성
+
+npm install 패키지명
+- npm public/private repository에 저장된 라이브러리를 설치
+
+npm install -D 패키지명
+- 개발에만 필요한 패키지를 설치, 사용자에게 전될되는 빌드 파일(정리된 소스코드)에는 포함하지 않습니다
+
+npm uninstall 패키지명
+- 해당 프로젝트에서 패키지를 삭제
+
+npm init
+- 특정 프로젝트(폴더)에 pacakge.json이 생성
+
+npm은 node에 기본적으로 내장
+
+---------------------------------
+
+yarn -> 더 빠른 속도, 보안성 --> 실무에서 가장 많이 사용 (add(install), remove)
+pnpm -> 효율적인(perfomant) npm ---> 글로벌 저장소 --> pnpm monorepo 구성할 때 많이 사용 (install(add), remove)
+
+yarn classic 
+yarn berry --> PnP --> node_modules 존재x  --> monorepo 구성할 때 많이 사용
+
+---------------------------------
+
+react-router-dom
+
+remix 팀이 만든 리액트의 URL을 관리하는 라이브러리
+SPA -> html 라우터를 여러 html 파일과 연결할 필요가 없습니다
+
+url에 따라 다른 컴포넌트를 보여주는 역할
+
+주소를 이동할 때
+<a>
+window.location.href
+
+react에서는 이 두가지로 경로를 이동하면 안됩니다
+<link>
+const navigate = useNavigate()
+navigate("/post")
+
+=> SPA 특성상 첫 방문 시 모든 페이지의 리소스를 다운로드 받는데
+기존의 방식은 이동 시 해당 리소스를 다시 다운로드 받기 때문이다
+
+
+---------------------------------
+
+메뉴구조도
+'/': 메인 페이지 (home.js)
+'/post' : 게시글 (post.js)
+'/post/detail' : 게시글 상세 (postDetail.js)
+'/my : 내정보 (my.js) 
+'/my/post' : 나의 게시글 (myPost.js)
+'/my/post/detail' 나의 게시글 상세 (myPostDetail.js)    
+
+페이지 컴포넌트
+
+
+---------------------------------
+
+다음주
+
+react-router-dom >> layout 설정
+***** hook-function *****
+  useState
+  useEffect
+  useReft
+  UseMemo
+  UseCallback
+  React.memo
+css-in-js
+컴포넌트를 나누는 기준
+todo-list, 게시판 만들기
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #f00;
+        margin: 10px;
+      }
+      #relative {
+        position: relative;
+        left: 200px;
+        /* margin-left: 210px; */
+      }
+      #absolute {
+        position: absolute;
+        top: 220px;
+        left: 50px;
+      }
+      #absolute-2 {
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: hotpink;
+        width: 30px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="static"></div>
+    <!-- 모든 요소들은 생성되면 기본 포지션이 스태틱 -->
+    <div id="relative">
+      <div id="absolute-2"></div>
+    </div>
+
+    <!-- 상대적 위치 결정 -->
+    <div id="absolute"></div>
+    <!-- html 절대 위치 결정-->
+  </body>
+</html>

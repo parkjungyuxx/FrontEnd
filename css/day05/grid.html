@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(4, 200px);
+        /* 1fr 1fr 1fr */
+        /* repeat(3, 200px) */
+      }
+
+      .a {
+        grid-column: 1 / 3;
+      }
+
+      .b {
+        grid-row: 2 / 4;
+      }
+      /* .c {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      } */
+
+      .d {
+        grid-row: 3 / 4;
+      }
+
+      .e {
+        grid-column: 1 / 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="grid-item a" style="background-color: red">a</div>
+      <div class="grid-item b" style="background-color: orange">b</div>
+      <div class="grid-item c" style="background-color: yellow">c</div>
+      <div class="grid-item d" style="background-color: green">d</div>
+      <div class="grid-item e" style="background-color: blue">e</div>
+<!--       
+      <div class="grid-item f" style="background-color: navy">f</div>
+      <div class="grid-item g" style="background-color: purple">g</div>
+      <div class="grid-item h" style="background-color: black">h</div>
+       -->
+    </div>
+  </body>
+</html>

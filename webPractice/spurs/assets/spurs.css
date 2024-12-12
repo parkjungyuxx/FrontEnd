@@ -1,0 +1,190 @@
+:root {
+  --grey-light-color: #eff0f1;
+  --yellow-color: #e1e55a;
+  --blue-light-color: #dcdfe6;
+  --blue-light-alt-color: #dddfe5;
+  --blue-brand-color: #111836;
+  --blue-brand-dark-color: #0a0e1e;
+  --blue-brand-light-color: #292f49;
+  --red-sale: #ad000c;
+}
+
+.gnb {
+  background-color: var(--blue-brand-dark-color);
+  width: 1440px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gnb-menu-list {
+  width: 1024px;
+  height: 38px;
+  margin: 0px 208px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.gnb-menu-item {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.gnb-menu-button {
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 16px;
+  margin: 0 20px 0 0;
+}
+
+.button-img-uk {
+  width: 15px;
+  height: 10px;
+}
+
+.gnb-menu-button-langauge {
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 16px;
+  margin: 0 20px 0 0;
+  box-sizing: border-box;
+}
+.gnb-menu-button-right {
+  background-color: transparent;
+  border: transparent;
+  border-left: 0.1px solid gray;
+  color: white;
+  font-size: 16px;
+  padding: 9px 8px 9px 20px;
+}
+
+.gnb-menu-button-right-link-hotspurstaduim {
+  width: 211.86px;
+  height: 34px;
+  background-color: transparent;
+  border: transparent;
+  font: 16px;
+  padding: 9px 8px 9px 20px;
+}
+
+.gnb-menu-link-hotspurstaduim {
+  text-decoration: none;
+  color: var(--yellow-color);
+}
+
+.main-page-container {
+  width: 100%;
+  height: 608.97px;
+  position: relative;
+  display: flex;
+}
+
+.nav-bar {
+  position: absolute;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.nav-bar-button-img-logo {
+  width: 30px;
+  height: 73.09;
+}
+
+.nav-bar-button-img-menu {
+  width: 20px;
+  height: 15.76px;
+}
+
+.nav-bar-button {
+  background-color: var(--blue-brand-color);
+  border: transparent;
+  width: 80px;
+  height: 189.24px;
+  padding: 34px 0 0;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 13px;
+}
+
+.main-page-background {
+  position: relative;
+}
+
+.main-page-background-img {
+  width: 1440px;
+  height: 608.97px;
+  filter: brightness(60%);
+  z-index: 1;
+}
+
+.main-page-text-container {
+  position: absolute;
+  padding: 0 0 60px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  bottom: 24px;
+  left: 360px;
+}
+
+.main-page-text {
+  font-size: 72px;
+  margin: 0 0 15px;
+  width: 720px;
+  height: 160px;
+  color: white;
+}
+
+.main-page-subtext-link {
+  text-decoration: none;
+  font-size: 20px;
+  color: #3db7e4;
+}
+
+.accessibility-menu {
+  position: fixed;
+  bottom: -8px;
+  left: 12px;
+  width: 64px;
+  height: 64px;
+}
+
+.accessibility-menu-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.accessibility-menu-button-img {
+  font-size: 40px;
+}
+
+.linklist {
+    display: flex;
+    width: 1024px;
+    height: 64x;
+    margin: 16px 208px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.linklist-item-img {
+    width: 244.63px;
+    height: 38px;
+}
+
+.linklist-item {
+    border: transparent;
+    background-color: transparent;
+}

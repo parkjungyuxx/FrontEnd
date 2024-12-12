@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display: flex;
+            flex-direction: column; /* row가 기본값, 세로인 요소도 세로 및 가로 정렬을 할 수 있도록 */
+            /* flex는 세로 요소를 가로 정렬하지만 세로 형태를 유지하고 flex 관련한 정렬 옵션을 쓰고 싶어서 */
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 600px;
+            border: 1px solid #00f;
+        }
+        
+        .flex-item{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <!-- <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> -->
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        <!-- </div> -->
+    </div>
+</body>
+</html>

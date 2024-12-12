@@ -1,0 +1,23 @@
+
+
+얕은 복사 = 주소값은 그대로두고 복사하는 방법
+깊은 복사 = 안에 있는 중첩 객체의 주소도 모두다 복사해서 새로 할당
+
+깊은 복사
+1. JSON.parse(JSON.stringfy())
+2. 라이브러리의 도움을 많이 받는다. loadsh, rx, es-toolkit -> deepcopy()
+
+구조분해할당
+
+  const 준규 = {age: 20, name: "박준규"}
+
+배열은 인덱스에 맞춰서 새로운 변수에 할당
+  -> 인덱스이기 때문에 이름을 마음대로 변경
+
+객체는 키 값에 맞춰서 새로운 변수에 할당
+  -> 키이기 때문에 이름 변경이 어렵다
+
+const { age: seongyoungAge, name } = {age:20, name: "kimseongyong"}
+// age(X)
+// seongyoungAge (O)
+

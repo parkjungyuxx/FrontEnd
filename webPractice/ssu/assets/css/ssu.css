@@ -1,0 +1,44 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  ;
+}
+
+body {
+margin: 0;
+padding: 25px 20px 0px;
+display: flex; 
+height: 100vh; 
+box-sizing: border-box;
+padding-top: 25px;
+}
+
+.main1 {
+    width: 512.2px;
+    height: 746px;
+}
+
+.main2 {
+    width: 1153.39px;
+    height: 746px;
+}
+
+.ssu-portal {
+  display: flex;
+  color: #009bcb;
+  font-size: 16px;
+  font-weight: 900;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.shortcut1 {
+    display: flex;
+}
+
+.shortcut2 {
+    display: flex;
+}
+
+.external-link {
+    display: flex;
+}

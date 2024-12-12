@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+    html은 무슨 모양?
+    사각형(박스)
+
+    테두리를 기준으로 바깥에 있는 여백을 마진, 다른 요소와의 간격
+    크기에는 포함이 되지 않지만, 영역에는 포함
+
+    ex) div {
+     width: 320px
+     margin: 16px
+    }
+    div의 넓이가 304, 336이 되는 것이 아니라 320은 그대로, 영역에 16px이 추가
+
+    마진 새로 겹침: 위 아래 마진이 겹치는 경우 가장 높은게 우선 시
+
+    margin/padding: 16px (네 방향)
+    margin/padding: 16px 32px (위/아래 좌/우)
+    margin/padding: 16px 32px 16px (위 좌/우 아래)
+    margin/padding: 16px 32px 16px 32px(위 우 아래 좌) --시계방향
+
+    magin-top/left/right/bottom: 16px --- 한 방향
+
+     ---------
+
+     테두리를 기준으로 안쪽어로 생기는 여백, 패딩, 크기에 포함
+     -->
+    <style>
+        .margin {
+            width: 320px;
+            height: 160px;
+            margin: 16px;
+            background: rgb(65,65,252);
+            box-sizing: content-box; /* 기본값, 내용물을 기준*/
+            box-sizing: border-box; /* 테두리 기준 (패딩과 테두리 크기를 포함해서 크기를 산정) */
+            /* 개발자가 계산하지 않고 디자인이 의도한대로 크기 부여 가능 */
+        }
+
+        .padding {
+            width: 320px;
+            height: 160px;
+            padding: 8px;
+            background-color: rgb(188, 111, 111);
+        }
+
+        div {
+            border: 1px solid #000;
+            /* 박스모델은 여백 테두리 내용 (안쪽여백과 테두리는 크기에 포함) 하지만 border-box (테두리 기준 상쇄) */
+            /* 내가 준 width의 크기가 여백과 상관없이 width가 되는것 */
+        }
+    </style>
+  </head>
+  <body>
+    <div class="margin"></div>
+    <div class="padding"></div>
+  </body>
+</html>

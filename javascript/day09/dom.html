@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./javascript/script.js"></script>
+    <!--
+     defer
+     async
+
+     html이 파싱되는 동안 백그라운드에서 실행
+     defer는 html이 모두 파싱되고 구성이 끝나면 실행
+     async는 html이 파싱되는 즉시 실행
+
+     html을 화면에 보여주면서 백그라운에서 동시에 평가
+     다만, defer 실행을 지연시킵니다. html 로드될 때까지
+
+     async 동시에 평가합니다, 다만 html 파싱이 아니라
+     즉시 실행, html 요소에 접근할 일이 없는 코드는 async
+     
+     -->
+</head>
+<body>
+    <section id="post-list">
+        <!-- <article class="post-item">
+            <h6>제목</h6>
+            <p>내용</p>
+        </article> -->
+    </section>
+    
+    <form id="post-form">
+        <input id="title-input" type="text">
+        <textarea id="content-area" name="" id=""></textarea>
+    </form>
+    <button form="post-form">작성</button>
+    
+    <!--
+     form은 자식에 있는 submit 버튼이 작동되어야 제출하는데
+     만약 버튼이 form 바깥에 있다면 id와 form 속성을 동일 시 하여 작동시키게
+     할 수 있다-->
+</body>
+</html>

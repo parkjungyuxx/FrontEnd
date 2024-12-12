@@ -1,0 +1,64 @@
+
+우리는 
+
+****
+백엔드에 어떠한 요청을 할 수 있고
+어떠한 데이터를 보내야 요청할 수 있으며
+요청 데이터는 어떻게 가지고 올 수 있는가
+응답 데이터는 어떻게 관리 해야하는가
+****
+
+사용자 -> 웹사이트에 접속했을 때 어던 요청을 했을지 
+
+1. 모달창 이벤트 (추축)
+url: "https://준규몰-벡엔드.com/madal/event",
+data: {
+    banner: [
+        {
+            title: "여름 맞이 이벤트"
+            img_url: "https://준규몰-이미지저장소.com//이미지.png
+        }
+    ]
+    category: [
+        {
+            title: "스니커즈"
+            callback-url: "https://준규몰-프론트/스니커즈"
+            logo_url: "https://준규몰-이미지저장소.com/이미지.png"
+        }
+
+    ]
+}
+
+
+2. 카테고리 요청
+
+url: "https://준규몰-벡엔드.com/main"
+--> 엄청나게 큰 ㅓson (객체,배열)자바스크립트 객체 표현식
+
+url: "https://준규몰-벡엔드.com/category"
+--> 두가지의 카테고리 포함된 하나의 카테고리 객체
+
+url: "https://준규몰-벡엔드.com/category/main"
+--> 메인 카테고리만 포함된 카테고리
+
+url: "https://준규몰-벡엔드.com/category/sub"
+--> 서브 카테고리만 포함된 카테고리
+
+3. 섹션 별 제품 목록
+
+url: "https://준규몰-벡엔드.com/main"
+url: "https://준규몰-벡엔드.com/section-products"
+url: "https://준규몰-벡엔드.com/????-section"
+
+
+
+
+JSON 
+{
+    title: "안녕하세요"
+}
+
+XML
+<title>
+    안녕하세요
+</title>

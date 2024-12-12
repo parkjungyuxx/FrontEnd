@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="user-list"></ul>
+    <hr />
+    <form class="add-user-form">
+      <input name="user-name" type="text" />
+      <button>추가</button>
+    </form>
+    <script>
+      // 추가
+      // form 제출 -< form 요소 + eventlistener
+      // submit -> e.target.name -> e.target["user-name"]
+      // 특정 요소 (user-list)에 자식 요소로 li를 추가
+      // -> appenChild, append, innerHtml, insertAdjecentElement(위치), insertBefore
+      // <li><p>{user-name}></p><button>추가</button><button>삭제</button><li>
+
+      // 수정. 삭제
+      // list의 자식 요소를 불러와서 모든 삭제나 수정 버튼에 이벤트를 부여
+      // 동적으로 추가되는 요소에는 이벤트가 부여되지 않습니다 -> 이벤트를 또 부여
+      // n개
+      // 이벤트 위임으로 처리 예정
+      // user-list -> event.target (수정, 삭제) -> 부모요소를 찾고 자식 요소를 찾고, 자식 요소
+
+      const addUserFormEl = document.querySelector(".add-user-form");
+      const userListEl = document.querySelector(".user-list");
+
+      addUserFormEl.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const li = document.createElement("li");
+        const userName = e.target["user-name"].value;
+        li.innerHTML = `<p>${userName}</p><button>수정</button><button>삭제</button>`;
+        userListEl.appendChild(li);
+      });
+
+      function changeEditMode(target) {
+        if (target.tagName !== "BUTTON" && target.innerHTML !== "수정") return;
+        const parent = target.parentNode;
+        console.log(target);
+        console.log(target.parentNode);
+        const pEl = parent.querySelector("p"); // parent인 li 내부에서만 찾는거
+        const inputEl = document.createElement("input");
+        inputEl.value = pEl.textContent;
+        pEl.replaceWith(inputEl);
+        target.innerHTML = "완료";
+      }
+
+      function editUser() {}
+
+      function deleteUser() {}
+
+      userListEl.addEventListener("click", (e) => {
+        console.log(e.target, e.currentTarget);
+
+        changeEditMode(e.target);
+
+        // 수정 -> 수정버튼 인지
+        // button & innerText === '수정'
+        // p태그를 input으로 변환
+        // button 텍스트를 수정 -> 완료 변환
+
+        // 완료 -> 완료버튼 인지
+        // button && innerText == '완료'
+        // input value를 가지고와서 완료되면 p태그로 다시 변환
+        // button 텍스트를 완료 -> 수정으로 변환
+
+        // 삭제 -> 삭제버튼 인지
+        // button & innerText == '삭제'
+        // buttondㅢ 부모인 li (user-list의 자식)를 찾아서 removeChild --종료--
+      });
+    </script>
+  </body>
+</html>

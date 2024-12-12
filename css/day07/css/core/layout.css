@@ -1,0 +1,10 @@
+/* 
+header footer의 경우는 모든 페이지에서 사용 간으한 UI
+php나 react를 사용하면 UI를 재사용 할 수 있음
+우리는 아직 배우지 않았기 때문에 layout.css에 footer,header,inner 정의 
+*/
+
+.main-inner {
+  width: 1248px;
+}
+

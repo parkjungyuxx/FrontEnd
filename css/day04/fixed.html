@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- html 요소가 가진 기본 속성 때문에 원하는 레이아웃으로 이동시키는 것이 어려울 수 있다 -->
+    <style>
+      /* 디자인 시스템 - 디자이너가 만든 스타일 가이드를 시스템화 한것 */
+      :root {
+        --color-dark: rgb(26, 27, 31);
+        --color-white-100: rgb(255, 255, 255);
+        --color-white-60: rgba(255, 255, 255, 0.6);
+      }
+      .container {
+        width: 720px;
+        margin: 0 auto;
+      }
+      main {
+        height: 200vh;
+        /* padding-top: 32px; fixed를 하게되면 요소가 겹치기 때문에 main padding을 주어야한다.*/
+      }
+
+      .gnb {
+        background-color: var(--color-dark);
+        padding: 12px 8px;
+        position: sticky;
+        top: 0; /* 상단에서 몇 px 남았을 때 부터 fixed로 전환 */
+        width: 720px; /* fixed 부여시 한 줄을 전부 차지하는 block 속성의 크기가 컨텐츠 */
+      }
+      .gnb > .gnb-menu-list {
+        display: flex;
+        gap: 16px;
+      }
+      .gnb > .gnb-menu-list > .gnb-menu-item {
+        color: var(--color-white-60);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .gnb > .gnb-menu-list > .gnb-menu-active {
+        color: var(--color-white-100);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- wrapper -->
+    <div class="container">
+      <!-- gnb(가장 크고 주된 메뉴) -->
+      <header class="gnb">
+        <ul class="gnb-menu-list">
+          <li class="gnb-menu-item gnb-menu-active">추천</li>
+          <li class="gnb-menu-item">브랜드</li>
+          <li class="gnb-menu-item">발매</li>
+          <li class="gnb-menu-item">랭킹</li>
+          <li class="gnb-menu-item">세일</li>
+          <li class="gnb-menu-item">추석 빅세일</li>
+          <li class="gnb-menu-item">대림창고 OPEN</li>
+        </ul>
+      </header>
+      <main>안녕하세요</main>
+    </div>
+  </body>
+</html>
