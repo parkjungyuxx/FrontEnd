@@ -11,9 +11,6 @@ export const TodolistContainer = styled.div`
   border-radius: 4px;
   color: black;
   font-weight: bold;
-  &:hover {
-    color: white;
-  }
   box-sizing: border-box;
 `;
 
@@ -90,7 +87,7 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   margin: 13px;
   background-color: #ffffff;
-  height: 64px;
+  height: 120px;
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -115,4 +112,19 @@ export const ListBtn = styled.button`
   font-size: 28px;
   background-color: transparent;
   border: none;
+`;
+
+export const SubmitBtn = styled.button`
+  height: 44px;
+  background-color: #fada7a;
+  border: none;
+  border-radius: 8px;
+`;
+
+export const ListTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 12px;
 `;

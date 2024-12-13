@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as style from "../emotion";
+import Modal from "../components/Modal";
 
 export default function Form() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,23 +13,9 @@ export default function Form() {
   return (
     <>
       <style.AddBtn onClick={openModal}>Add</style.AddBtn>
-      {isModalOpen && <Modal />}
+      {isModalOpen && (
+        <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      )}
     </>
   );
 }
-
-const Modal = () => {
-  return (
-    <style.ModalContainer>
-      <style.ModalContent>
-        <style.ModalForm>
-          <p>할일 제목</p>
-          <input />
-
-          <p>할일 </p>
-          <input />
-        </style.ModalForm>
-      </style.ModalContent>
-    </style.ModalContainer>
-  );
-};
