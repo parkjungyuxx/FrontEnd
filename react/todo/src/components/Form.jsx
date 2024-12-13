@@ -1,16 +1,34 @@
-import React from "react";
-import styled from "@emotion/styled/macro";
+import React, { useState } from "react";
+import * as style from "../emotion";
 
 export default function Form() {
-  return <AddBtn>Add</AddBtn>;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen((prev) => !prev);
+    console.log(isModalOpen);
+  };
+
+  return (
+    <>
+      <style.AddBtn onClick={openModal}>Add</style.AddBtn>
+      {isModalOpen && <Modal />}
+    </>
+  );
 }
 
-const AddBtn = styled.button`
-  background-color: #fada7a;
-  margin: 12px 0;
-  height: 64px;
-  border: none;
-  font-size: 24px;
-  font-weight: 600;
-  border-radius: 8px;
-`;
+const Modal = () => {
+  return (
+    <style.ModalContainer>
+      <style.ModalContent>
+        <style.ModalForm>
+          <p>할일 제목</p>
+          <input />
+
+          <p>할일 </p>
+          <input />
+        </style.ModalForm>
+      </style.ModalContent>
+    </style.ModalContainer>
+  );
+};
