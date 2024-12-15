@@ -1,6 +1,7 @@
 import "./App.css";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { store } from "./store/store";
+import { useRef } from "react";
 
 // 1. createStore(), 모든 전역 상태가 관리되는 가장 큰 저장소
 // 2. rootReducer() reducer들을 하나로 합쳐주는 역할
@@ -13,22 +14,42 @@ function ReduxComponent() {
   const users = useSelector((state) => state.user); // state
   const dispatch = useDispatch(); // dispatch === useReducer
 
-  const handleClickAddUser = () => {
+  const inputRef = useRef(null);
+
+  const addUser = (e) => {
+    inputRef.current.focus();
     dispatch({
       type: "add_user",
       payload: {
         id: Math.floor(Math.random() * 100000000000),
-        name: "park",
+        name: inputRef.current.value,
       },
     });
+    inputRef.current.value = "";
+  };
+
+  const deleteUser = (e) => {
+    dispatch({
+      type: "delete_user",
+      payload: {
+        name: inputRef.current.value,
+      },
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   return (
     <>
       {users.map((user) => (
-        <div key={user.id}>{user.name}</div>
+        <li key={user.id}>{user.name}</li>
       ))}
-      <button onClick={handleClickAddUser}>add</button>
+
+      <input ref={inputRef} />
+      <button onClick={addUser}>add</button>
+      <button onClick={deleteUser}>delete</button>
     </>
   );
 }
