@@ -1,6 +1,18 @@
+import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header/Header";
+import Todolist from "./components/Todolist/Todolist";
+
+const filters = ["All", "Scheduled", "Completed"];
+
 function App() {
-  return 
+  const [filter, setFilter] = useState(filters[0]);
+  return (
+    <>
+      <Header filters={filters} setFilter={setFilter} />
+      <Todolist filter={filter} />
+    </>
+  );
 }
 
 export default App;
