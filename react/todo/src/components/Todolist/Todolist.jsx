@@ -13,11 +13,7 @@ export default function Todolist({ filter }) {
   };
 
   const handleEdit = (todoToEdit) => {
-    if (todoToEdit.isEditing)
-      setTodos((prev) => [
-        ...prev,
-        { ...todoToEdit, isEditing: !todoToEdit.isEditing },
-      ]);
+    if (todoToEdit.isEditing) setTodos((prev) => [...prev,  edited.isEditing, isEditing: false ])
 
     console.log(todoToEdit.isEditing);
   };
