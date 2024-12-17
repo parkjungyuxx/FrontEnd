@@ -12,8 +12,12 @@ export default function Todolist({ filter }) {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleEdit = (edited) => {
-    console.log(edited.isEditing);
+  const handleEdit = (todoToEdit) => {
+    if (todoToEdit.isEditing)
+      setTodos((prev) => [...prev, { ...todoToEdit, isEditing: false }]);
+    else setTodos((prev) => [...prev, { ...todoToEdit, isEditing: true }]);
+
+    console.log(todoToEdit.isEditing);
   };
 
   const handleDelete = (deleted) => {

@@ -8,8 +8,11 @@ export default function Todo({ todo, handleEdit, handleDelete }) {
       <input type="checkbox" />
       <label>{title}</label>
       <label>{text}</label>
-      <button onClick={() => handleEdit(todo)}>Edit</button>
+      <button onClick={() => handleEdit(todo)}>
+        {isEditing ? "Update" : "Edit"}
+      </button>
       <button onClick={() => handleDelete(todo)}>Delete</button>
+      {isEditing && <div>수정중</div> }
     </li>
   );
 }
