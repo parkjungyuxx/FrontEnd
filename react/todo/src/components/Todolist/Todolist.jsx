@@ -13,11 +13,14 @@ export default function Todolist({ filter }) {
   };
 
   const handleEdit = (todoToEdit) => {
-    if (todoToEdit.isEditing) setTodos((prev) => [...prev,  edited.isEditing, isEditing: false ])
-
-    console.log(todoToEdit.isEditing);
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === todoToEdit.id
+          ? { ...todo, ...todoToEdit, isEditing: !todo.isEditing }
+          : todo
+      )
+    );
   };
-
   const handleDelete = (deleted) => {
     setTodos(todos.filter((el) => el.id !== deleted.id));
   };
