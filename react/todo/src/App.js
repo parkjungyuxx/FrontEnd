@@ -7,6 +7,8 @@ const filters = ["All", "Scheduled", "Completed"];
 
 function App() {
   const [filter, setFilter] = useState(filters[0]);
+
+  
   return (
     <>
       <Header filters={filters} setFilter={setFilter} />

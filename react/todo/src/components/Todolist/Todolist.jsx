@@ -21,8 +21,18 @@ export default function Todolist({ filter }) {
       )
     );
   };
-  const handleDelete = (deleted) => {
-    setTodos(todos.filter((el) => el.id !== deleted.id));
+  const handleDelete = (todoToDelete) => {
+    setTodos(todos.filter((el) => el.id !== todoToDelete.id));
+  };
+
+  const updateFilterState = (todoToChangeState) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === todoToChangeState.id
+          ? { ...todo, status: "Completed" }
+          : todo
+      )
+    );
   };
 
   const filtered = getFilteredItem(todos, filter);
@@ -35,6 +45,7 @@ export default function Todolist({ filter }) {
             todo={el}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            updateFilterState={updateFilterState}
             setTodos={setTodos}
           />
         ))}
