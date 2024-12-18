@@ -5,8 +5,8 @@ export default function Header({ filters }) {
     <header>
       <p>TODO LIST</p>
       <li>
-        {filters.map((el) => (
-          <button>{el}</button>
+        {filters.map((el, i) => (
+          <button key={i}>{el}</button>
         ))}
       </li>
     </header>

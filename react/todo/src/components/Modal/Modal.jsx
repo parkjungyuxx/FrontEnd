@@ -17,8 +17,6 @@ export default function Modal({ addTodo, setIsModalOpen }) {
       isEditing: false,
     });
     console.log(title, text);
-    title = "";
-    text = "";
     setIsModalOpen((prev) => !prev);
   };
   return (

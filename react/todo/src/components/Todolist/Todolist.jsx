@@ -35,6 +35,7 @@ export default function Todolist({ filter }) {
             todo={el}
             handleDelete={handleDelete}
             handleEdit={handleEdit}
+            setTodos={setTodos}
           />
         ))}
       </ul>
@@ -50,5 +51,5 @@ function getFilteredItem(todos, filter) {
   if (filter === "All") {
     return todos;
   }
-  todos.filter((el) => el.status === filter);
+  return todos.filter((el) => el.status === filter);
 }
