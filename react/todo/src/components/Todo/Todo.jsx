@@ -6,9 +6,8 @@ export default function Todo({
   handleDelete,
   handleEditToggle,
   updateFilterState,
-  isEditing,
 }) {
-  const { id, title, text } = todo;
+  const { id, title, text, isEditing } = todo;
 
   return (
     <>
@@ -23,7 +22,7 @@ export default function Todo({
           />
           <label>title: {title}</label>
           <label>text: {text}</label>
-          <button onClick={() => handleEditToggle(id)}>Edit</button>
+          <button onClick={() => handleEditToggle(todo)}>Edit</button>
           <button onClick={() => handleDelete(todo)}>Delete</button>
         </li>
       )}

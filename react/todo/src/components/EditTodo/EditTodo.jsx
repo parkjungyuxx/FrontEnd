@@ -25,19 +25,13 @@ export default function EditTodo({ setTodos, todoId }) {
         isEditing: false,
       },
     });
-    console.log("EditTodo Dispatched:", {
-      id: todoId,
-      title: editedTitle,
-      text: editedText,
-      isEditing: false,
-    });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input ref={titleInputRef} type="text" placeholder="edit title" />
       <input ref={textInputRef} type="text" placeholder="edit text" />
-      <button type="submit">Update</button>
+      <button>Update</button>
     </form>
   );
 }
