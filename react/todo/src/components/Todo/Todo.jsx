@@ -4,27 +4,26 @@ import EditTodo from "../EditTodo/EditTodo";
 export default function Todo({
   todo,
   handleDelete,
-  handleEdit,
-  setTodos,
+  handleEditToggle,
   updateFilterState,
+  isEditing,
 }) {
-  const { id, title, text, isEditing } = todo;
+  const { id, title, text } = todo;
 
   return (
     <>
       {isEditing ? (
-        <EditTodo setTodos={setTodos} todoId={id} />
+        <EditTodo todoId={id} />
       ) : (
-        <li key={id}>
+        <li>
           <input
             type="checkbox"
-            onClick={() => {
-              updateFilterState(todo);
-            }}
+            checked={todo.status === "Completed"}
+            onChange={() => updateFilterState(todo)}
           />
           <label>title: {title}</label>
           <label>text: {text}</label>
-          <button onClick={() => handleEdit(todo)}>Edit</button>
+          <button onClick={() => handleEditToggle(id)}>Edit</button>
           <button onClick={() => handleDelete(todo)}>Delete</button>
         </li>
       )}

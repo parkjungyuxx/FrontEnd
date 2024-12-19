@@ -1,39 +1,43 @@
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 import Todo from "../Todo/Todo";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function Todolist({ filter }) {
-  const [todos, setTodos] = useState([]);
+  const dispatch = useDispatch();
+  const todos = useSelector((state) => state.todo);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const addTodo = (todo) => setTodos([...todos, todo]);
+  const [isEditingId, setIsEditingId] = useState(null);
 
   const handleModalOpen = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleEdit = (todoToEdit) => {
-    setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === todoToEdit.id
-          ? { ...todo, ...todoToEdit, isEditing: !todo.isEditing }
-          : todo
-      )
-    );
-  };
-  const handleDelete = (todoToDelete) => {
-    setTodos(todos.filter((el) => el.id !== todoToDelete.id));
+  const handleEditToggle = (todoToChangeEditState) => {
+    dispatch({
+      type: "update_todo_edit_status",
+      payload: { id: todoToChangeEditState.id, isEditing: true },
+    });
   };
 
-  const updateFilterState = (todoToChangeState) => {
-    setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === todoToChangeState.id
-          ? { ...todo, status: "Completed" }
-          : todo
-      )
-    );
+  const handleDelete = (todoToDelete) => {
+    dispatch({
+      type: "delete_todo",
+      payload: { id: todoToDelete.id },
+    });
   };
+
+  const updateFilterState = (todoToChangeStatusState) => {
+    dispatch({
+      type: "update_todo_status",
+      payload: {
+        id: todoToChangeStatusState.id,
+        status: "Completed",
+      },
+    });
+  };
+  console.log("Todolist Redux State:", todos);
 
   const filtered = getFilteredItem(todos, filter);
   return (
@@ -43,17 +47,15 @@ export default function Todolist({ filter }) {
           <Todo
             key={el.id}
             todo={el}
+            isEditing={isEditingId === el.id}
+            handleEditToggle={handleEditToggle}
             handleDelete={handleDelete}
-            handleEdit={handleEdit}
             updateFilterState={updateFilterState}
-            setTodos={setTodos}
           />
         ))}
       </ul>
       <button onClick={handleModalOpen}>Add</button>
-      {isModalOpen && (
-        <Modal addTodo={addTodo} setIsModalOpen={setIsModalOpen} />
-      )}
+      {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
     </>
   );
 }
