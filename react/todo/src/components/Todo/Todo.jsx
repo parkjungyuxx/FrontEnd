@@ -7,11 +7,11 @@ export default function Todo({
   handleEditToggle,
   updateFilterState,
 }) {
-  const { id, title, text, isEditing } = todo;
+  const { id, title, text, isEditMode } = todo;
 
   return (
     <>
-      {isEditing ? (
+      {isEditMode ? (
         <EditTodo todoId={id} />
       ) : (
         <li>

@@ -22,7 +22,7 @@ export default function Modal({ setIsModalOpen }) {
         title,
         text,
         status: "Scheduled",
-        isEditing: false,
+        isEditMode: false,
       },
     });
     setIsModalOpen((prev) => !prev);

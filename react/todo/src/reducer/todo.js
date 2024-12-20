@@ -11,7 +11,7 @@ export const todoReducer = (state = [], action) => {
               ...todo,
               title: action.payload.title,
               text: action.payload.text,
-              isEditing: action.payload.isEditing,
+              isEditMode: action.payload.isEditMode,
             }
           : todo
       );
@@ -24,7 +24,7 @@ export const todoReducer = (state = [], action) => {
     case "update_todo_edit_status":
       return state.map((todo) =>
         todo.id === action.payload.id
-          ? { ...todo, isEditing: action.payload.isEditing }
+          ? { ...todo, isEditMode: action.payload.isEditMode }
           : todo
       );
     default:

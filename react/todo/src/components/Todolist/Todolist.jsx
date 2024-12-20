@@ -8,7 +8,6 @@ export default function Todolist({ filter }) {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditingId] = useState(null);
 
   const handleModalOpen = () => {
     setIsModalOpen(!isModalOpen);
@@ -17,7 +16,7 @@ export default function Todolist({ filter }) {
   const handleEditToggle = (todoToChangeEditState) => {
     dispatch({
       type: "update_todo_edit_status",
-      payload: { id: todoToChangeEditState.id, isEditing: true },
+      payload: { id: todoToChangeEditState.id, isEditMode: true },
     });
   };
 
@@ -29,11 +28,15 @@ export default function Todolist({ filter }) {
   };
 
   const updateFilterState = (todoToChangeStatusState) => {
+    const status =
+      todoToChangeStatusState.status === "Completed"
+        ? "Scheduled"
+        : "Completed";
     dispatch({
       type: "update_todo_status",
       payload: {
         id: todoToChangeStatusState.id,
-        status: "Completed",
+        status,
       },
     });
   };
@@ -46,7 +49,7 @@ export default function Todolist({ filter }) {
           <Todo
             key={el.id}
             todo={el}
-            isEditing={isEditingId === el.id}
+            isEditMode={el.isEditMode}
             handleEditToggle={handleEditToggle}
             handleDelete={handleDelete}
             updateFilterState={updateFilterState}

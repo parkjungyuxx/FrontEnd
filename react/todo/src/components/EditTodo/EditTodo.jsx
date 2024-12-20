@@ -12,7 +12,7 @@ export default function EditTodo({ todoId }) {
     const editedText = textInputRef.current.value;
 
     if (!editedTitle || !editedText) {
-      alert("제목과 내용을 입력하쇼!");
+      alert("제목과 내용을 입력하쇼");
       return;
     }
 
@@ -22,7 +22,7 @@ export default function EditTodo({ todoId }) {
         id: todoId,
         title: editedTitle,
         text: editedText,
-        isEditing: false,
+        isEditMode: false,
       },
     });
   };
