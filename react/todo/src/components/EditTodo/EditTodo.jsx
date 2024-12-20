@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 
-export default function EditTodo({ setTodos, todoId }) {
+export default function EditTodo({ todoId }) {
   const titleInputRef = useRef();
   const textInputRef = useRef();
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export default function EditTodo({ setTodos, todoId }) {
     const editedText = textInputRef.current.value;
 
     if (!editedTitle || !editedText) {
-      alert("Title and text cannot be empty!");
+      alert("제목과 내용을 입력하쇼!");
       return;
     }
 

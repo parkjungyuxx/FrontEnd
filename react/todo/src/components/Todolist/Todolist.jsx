@@ -8,7 +8,7 @@ export default function Todolist({ filter }) {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isEditingId, setIsEditingId] = useState(null);
+  const [isEditingId] = useState(null);
 
   const handleModalOpen = () => {
     setIsModalOpen(!isModalOpen);
@@ -37,7 +37,6 @@ export default function Todolist({ filter }) {
       },
     });
   };
-  console.log("Todolist Redux State:", todos);
 
   const filtered = getFilteredItem(todos, filter);
   return (
