@@ -64,3 +64,5 @@ export const deleteUser = http.delete(
 // request parameter
 
 // 과제 투두리스트 만들기
+
+// rtk thunk (rtk 사용할거면)
