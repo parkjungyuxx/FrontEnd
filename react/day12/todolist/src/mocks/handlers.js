@@ -1,5 +1,5 @@
 import * as authApi from "./apis/auth/authApi";
-import * as userApi from "./apis/user/userApi";
+import * as todoApi from "./apis/todo/todoApi";
 
 // mocking api 역할을 등록
-export const handlers = [...Object.values(authApi), ...Object.values(userApi)];
+export const handlers = [...Object.values(authApi), ...Object.values(todoApi)];

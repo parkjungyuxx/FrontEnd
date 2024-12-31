@@ -1,26 +1,27 @@
 import { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import axios from "axios";
+import AddTodoForm from "./components/AddTodoForm";
 
 function App() {
   const [userList, setUserList] = useState([]);
 
   const fetchUserList = useCallback(async () => {
-    const response = await axios.get("/api/user/list");
-    console.log(response);
+    const response = await axios.get("/api/todo/list");
+    console.log("ㅁㄴㅇ",response);
   }, []);
 
   useEffect(function onInt() {
     fetchUserList();
   }, []);
 
-  const handleAddUser = async () => {
-    const newUser = {
+  const handleAddTodo = async (text) => {
+    const newTodo = {
       userId: "example2",
-      nickName: "example3",
+      text: text,
     };
-
-    const response = await axios.post("/api/user", newUser);
+    console.log(text);
+    const response = await axios.post("/api/todo", newTodo);
     console.log(response); // response.data에 mockUserList가 전달되고 있지만 보통은 절달되지 않는다
     // 데이터를 다시 호출하지 않고 상태만 바꿀 수 있다.
     // 이런 경우는 response에 추가한 데이터를 그대로 전달
@@ -31,7 +32,7 @@ function App() {
     fetchUserList();
   };
 
-  const handleDeleteUser = async () => {
+  const handleDeleteTodo = async () => {
     const response = await axios.delete("/api/user/example33");
     console.log(response);
   };
@@ -60,12 +61,12 @@ function App() {
 
   return (
     <>
+      <AddTodoForm handleAddTodo={handleAddTodo} />
       <button>로그인</button>
       <button>로그아웃</button>
       <button onClick={handleFetchUser}>유저 상세</button>
       <button>유저 목록</button>
-      <button onClick={handleAddUser}>유저 추가</button>
-      <button onClick={handleDeleteUser}>유저 삭제</button>
+      <button onClick={handleDeleteTodo}>투두 삭제</button>
       {userList.map((user) => (
         <div>{user.userId}</div>
       ))}
