@@ -1,76 +1,97 @@
-import { useEffect, useState, useCallback } from "react";
-import "./App.css";
+import { useEffect, useState, useCallback, useRef } from "react";
 import axios from "axios";
-import AddTodoForm from "./components/AddTodoForm";
 
 function App() {
-  const [userList, setUserList] = useState([]);
+  const [todoList, setTodoList] = useState([]);
+  const addInputRef = useRef(null);
+  const editInputRef = useRef(null);
 
-  const fetchUserList = useCallback(async () => {
+  // 투두 리스트 조회
+  const fetchTodoList = useCallback(async () => {
     const response = await axios.get("/api/todo/list");
-    console.log("ㅁㄴㅇ",response);
+    setTodoList(response.data);
   }, []);
 
-  useEffect(function onInt() {
-    fetchUserList();
-  }, []);
+  useEffect(() => {
+    fetchTodoList();
+  }, [fetchTodoList]);
 
+  // 투두 추가
   const handleAddTodo = async (text) => {
-    const newTodo = {
-      userId: "example2",
-      text: text,
-    };
-    console.log(text);
-    const response = await axios.post("/api/todo", newTodo);
-    console.log(response); // response.data에 mockUserList가 전달되고 있지만 보통은 절달되지 않는다
-    // 데이터를 다시 호출하지 않고 상태만 바꿀 수 있다.
-    // 이런 경우는 response에 추가한 데이터를 그대로 전달
-    // 실제 데이터베이스와 다를 수 있다, 다시 호출하거나 새로고침하는 경우가 많음
-    // 데이터의 변경은 나 혼자만 일으키는 것이 아니라 다른 사용자가 발생
-    // 이를 방지하려면 mockUserList 처럼 모든 값을 다 줘야하는데, 그럼 재호출과 같음
-
-    fetchUserList();
+    const response = await axios.post("/api/todo", { text });
+    setTodoList((prev) => [...prev, response.data]);
+    console.log(todoList);
   };
 
-  const handleDeleteTodo = async () => {
-    const response = await axios.delete("/api/user/example33");
-    console.log(response);
+  // 투두 수정
+  const handleUpdateTodo = async (id, updates) => {
+    const response = await axios.patch(`/api/todo/${id}`, updates);
+    setTodoList((prev) =>
+      prev.map((todo) => (todo.id === id ? response.data : todo))
+    );
   };
 
-  const handleFetchUser = async () => {
-    try {
-      const response = await axios.get("/api/user?token=testdToken");
-    } catch (err) {
-      console.log(err.response);
-      switch (err.response.status) {
-        // global error -> global error handling
-        // error-boundary, errorElement
+  // 투두 삭제
+  const handleDeleteTodo = async (id) => {
+    await axios.delete(`/api/todo/${id}`);
+    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
+  };
 
-        // local -> 에러메세지를 다르게 보여줘라, 토스트 메세지를 보여주세요
-        case 401:
-          alert("로그인 해주세요");
-        case 403:
-          alert("권한이 없습니다");
-        default:
-          throw err;
-      }
-      // => async/await -> try/catch -> catch(error) -> 분기처리(에러핸들링)
-      // => 글로벌 에러 핸들링은 최상위에서 하는게 좋다
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const text = addInputRef.current.value;
+    handleAddTodo(text);
+    addInputRef.current.value = "";
+  };
+
+  const handleEditTodo = (e, id) => {
+    e.preventDefault();
+    const newText = editInputRef.current.value;
+    console.log(newText);
+    handleUpdateTodo(id, { text: newText, editMode: false });
   };
 
   return (
-    <>
-      <AddTodoForm handleAddTodo={handleAddTodo} />
-      <button>로그인</button>
-      <button>로그아웃</button>
-      <button onClick={handleFetchUser}>유저 상세</button>
-      <button>유저 목록</button>
-      <button onClick={handleDeleteTodo}>투두 삭제</button>
-      {userList.map((user) => (
-        <div>{user.userId}</div>
-      ))}
-    </>
+    <div>
+      <h1>Todo List</h1>
+      <ul>
+        {todoList.map((todo) => (
+          <li key={todo.id}>
+            {todo.editMode ? (
+              <form
+                onSubmit={(e) => {
+                  handleEditTodo(e, todo.id);
+                }}
+              >
+                <input
+                  ref={editInputRef}
+                  type="text"
+                  placeholder="수정 내용 작성좀"
+                />
+              </form>
+            ) : (
+              todo.text
+            )}
+            <button
+              onClick={() =>
+                handleUpdateTodo(todo.id, { editMode: !todo.editMode })
+              }
+            >
+              {todo.editMode ? "Update" : "Edit"}
+            </button>
+            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <input
+          ref={addInputRef}
+          type="text"
+          placeholder="할일 목록 추가하삼 "
+        />
+        <button>Add</button>
+      </form>
+    </div>
   );
 }
 
