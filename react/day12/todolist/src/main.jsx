@@ -2,6 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+import { Provider } from "react-redux";
+import { store } from "./store.js";
 
 const enableMocking = async () => {
   if (import.meta.env.PROD) return;
@@ -13,7 +15,9 @@ const enableMocking = async () => {
 enableMocking().then(() => {
   createRoot(document.getElementById("root")).render(
     <StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </StrictMode>
   );
 });

@@ -1,66 +1,58 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addTodo,
+  getTodos,
+  updateTodo,
+  deleteTodo,
+} from "./reducer/todoReducer";
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
+  const todos = useSelector((state) => state.todo.todos);
+  const getTodosState = useSelector((state) => state.todo.getTodosState);
+  const dispatch = useDispatch();
   const addInputRef = useRef(null);
   const editInputRef = useRef(null);
 
-  // 투두 리스트 조회
-  const fetchTodoList = useCallback(async () => {
-    const response = await axios.get("/api/todo/list");
-    setTodoList(response.data);
-  }, []);
-
   useEffect(() => {
-    fetchTodoList();
-  }, [fetchTodoList]);
+    dispatch(getTodos());
+  }, [dispatch]);
 
-  // 투두 추가
-  const handleAddTodo = async (text) => {
-    const response = await axios.post("/api/todo", { text });
-    setTodoList((prev) => [...prev, response.data]);
-    console.log(todoList);
-  };
-
-  // 투두 수정
-  const handleUpdateTodo = async (id, updates) => {
-    const response = await axios.patch(`/api/todo/${id}`, updates);
-    setTodoList((prev) =>
-      prev.map((todo) => (todo.id === id ? response.data : todo))
-    );
-  };
-
-  // 투두 삭제
-  const handleDeleteTodo = async (id) => {
-    await axios.delete(`/api/todo/${id}`);
-    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
-  };
-
-  const handleSubmit = (e) => {
+  const handleAddTodo = (e) => {
     e.preventDefault();
     const text = addInputRef.current.value;
-    handleAddTodo(text);
+    dispatch(addTodo(text));
     addInputRef.current.value = "";
   };
 
-  const handleEditTodo = (e, id) => {
+  const handleUpdateTodo = (e, id) => {
     e.preventDefault();
     const newText = editInputRef.current.value;
-    console.log(newText);
-    handleUpdateTodo(id, { text: newText, editMode: false });
+    const updates = { text: newText, editMode: false };
+    dispatch(updateTodo({ id, updates }));
   };
+
+  const handleDeleteTodo = (id) => {
+    dispatch(deleteTodo(id));
+  };
+
+  const handleEditMode = (id) => {
+    dispatch(updateTodo({ id, updates: { editMode: true } }));
+  };
+
+  if (getTodosState.loading) return <div>로딩중...</div>;
 
   return (
     <div>
       <h1>Todo List</h1>
       <ul>
-        {todoList.map((todo) => (
+        {todos.map((todo) => (
           <li key={todo.id}>
             {todo.editMode ? (
               <form
                 onSubmit={(e) => {
-                  handleEditTodo(e, todo.id);
+                  handleUpdateTodo(e, todo.id);
                 }}
               >
                 <input
@@ -73,9 +65,9 @@ function App() {
               todo.text
             )}
             <button
-              onClick={() =>
-                handleUpdateTodo(todo.id, { editMode: !todo.editMode })
-              }
+              onClick={() => {
+                handleEditMode(todo.id, { editMode: !todo.editMode });
+              }}
             >
               {todo.editMode ? "Update" : "Edit"}
             </button>
@@ -83,7 +75,7 @@ function App() {
           </li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleAddTodo}>
         <input
           ref={addInputRef}
           type="text"
