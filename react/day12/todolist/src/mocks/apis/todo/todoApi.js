@@ -9,7 +9,7 @@ const mockDataTodoList = [
 ];
 
 // /api/user
-export const userInfo = http.get("/api/todo", ({ request }) => {
+export const userInfo = http.get("/api/user", ({ request }) => {
   const url = new URL(request.url);
   const token = url.searchParams.get("token");
 
@@ -54,7 +54,7 @@ export const addTodo = http.post("/api/todo", async ({ request }) => {
   mockDataTodoList.push(todo);
 
   return new HttpResponse(JSON.stringify(todo), {
-    status: 201,
+    status: 200,
     headers: { "Content-Type": "application/json" },
   });
 });
@@ -96,5 +96,5 @@ export const deleteTodo = http.delete("/api/todo/:id", ({ params }) => {
     });
   }
 
-  return new HttpResponse("Todo not found", { status: 404 });
+  return new HttpResponse("no todo", { status: 404 });
 });
