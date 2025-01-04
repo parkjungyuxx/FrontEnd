@@ -69,7 +69,7 @@ function App() {
                 handleEditMode(todo.id, { editMode: !todo.editMode });
               }}
             >
-              Edit
+              {todo.editMode ? "Update" : "Edit"}
             </button>
             <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
           </li>
