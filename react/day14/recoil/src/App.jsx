@@ -1,16 +1,17 @@
 import Child from "./Child";
 import "./App.css";
-import Button from "./components/button/Button";
+
 import { useRecoilState } from "recoil";
 import { modalAtom } from "./atoms/modalAtom";
+import DNButton from "./components/button/Button";
 
 function App() {
   const [isOpen, setIsOpen] = useRecoilState(modalAtom);
   return (
     <>
-      <Button onClick={() => setIsOpen((prev) => !prev)}>
+      <DNButton size="large" isActive={() => setIsOpen((prev) => !prev)}>
         {isOpen ? "Close" : "Open"}
-      </Button>
+      </DNButton>
       <Child />
     </>
   );

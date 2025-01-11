@@ -1,0 +1,28 @@
+import * as Stories from "./Button.stories.jsx";
+import { Meta, Title, Canvas, Controls } from "@storybook/blocks";
+
+<Meta of={Stories} />
+
+<Title>Button</Title>
+
+<br />
+<br />
+<br />
+
+## Definition
+
+`DNButton`은 버튼을 쉽게 재사용 하기 위해 작성된 컴포넌트입니다.
+
+## Usage
+
+```jsx
+<DNButton
+    isActive
+    size='large'
+>
+```
+
+## Example
+
+<Canvas of={Stories.Medium} />
+<Controls of={Stories.Medium} />
