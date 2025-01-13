@@ -40,7 +40,7 @@ function App() {
 
       return () => {
         if (!el) return;
-        observer.unobserve(lastMovieItemRef.currnet);
+        observer.unobserve(el);
       };
     },
     [fetchNextPage, isLoading]
