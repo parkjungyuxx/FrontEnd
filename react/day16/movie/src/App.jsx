@@ -48,15 +48,18 @@ function App() {
 
   console.log(movieList);
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
-      {movieList.map((movie) => (
-        <div key={movie.id}>
-          <img src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} />
-          <p>{movie.title}</p>
-        </div>
-      ))}
-      <div ref={lastMovieItemRef}></div>
-    </div>
+    <>
+    <div>Movie</div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+        {movieList.map((movie) => (
+          <div key={movie.id}>
+            <img src={"https://image.tmdb.org/t/p/w200" + movie.poster_path} />
+            <p>{movie.title}</p>
+          </div>
+        ))}
+        <div ref={lastMovieItemRef}></div>
+      </div>
+    </>
   );
 }
 
