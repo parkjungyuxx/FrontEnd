@@ -49,6 +49,7 @@ function App() {
   console.log(movieList);
   return (
     <>
+    <div>메뉴 리스트</div>
     <div>Movie</div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
         {movieList.map((movie) => (
