@@ -1,8 +1,22 @@
 {
+  "name": "day03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.12.0",
+    "nodemon": "^3.1.9",
     "sequelize": "^6.37.5",
     "sequelize-cli": "^6.6.2"
-  }
+  },
+  "type": "module"
 }
