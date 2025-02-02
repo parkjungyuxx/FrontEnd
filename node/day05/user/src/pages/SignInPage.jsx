@@ -1,25 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import useSignIn from "../features/auth/hooks/mutations/useSignIn";
 
-export default function SignInPage() {
-  const { mutateAsync } = useSignIn();
-  const navigate = useNavigate();
+const SignInPage = () => {
 
-  const handleSubmitSignIn = async (e) => {
+  const { mutateAsync } = useSignIn()
+  const navigate = useNavigate()
+
+  const handleSumitSignIn = async (e) => {
     e.preventDefault();
-    console.log(e.target.email, e.target.password);
-    await mutateAsync({
+    
+    const { data } = await mutateAsync({
       email: e.target.email.value,
-      password: e.target.password.value,
-    });
-    navigate("/");
-  };
+      password: e.target.password.value
+    })
 
-  return (
-    <form onSubmit={handleSubmitSignIn}>
-      <input name="email" placeholder="email" />
-      <input name="password" placeholder="password" />
-      <butotn>로그인</butotn>
-    </form>
-  );
+    localStorage.setItem('DN_AUT', data.token)
+
+    const token = localStorage.getItem('DN_AUT')
+    if(token) navigate('/')
+  }
+
+  return <form onSubmit={handleSumitSignIn}>
+    <input name="email" placeholder="email"/>
+    <input name="password" placeholder="password"/>
+    <button>로그인</button>
+  </form>
 }
+export default SignInPage
